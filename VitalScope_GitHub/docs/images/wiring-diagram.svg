@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="VitalScope wiring diagram">
+  <title>VitalScope Wiring Diagram</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="'SF Pro Display', sans-serif" font-size="28" font-weight="700" fill="#0F172A">VitalScope Hardware Wiring</text>
+  <text x="600" y="65" text-anchor="middle" font-family="'SF Pro Text', sans-serif" font-size="14" fill="#64748B">ESP32 WROOM • SSD1306 OLED • MAX30102 • DS18B20 • AD8232</text>
+
+  <!-- ESP32 (center) -->
+  <g filter="url(#shadow)">
+    <rect x="500" y="320" width="200" height="280" rx="12" fill="#1E293B"/>
+    <rect x="510" y="340" width="180" height="40" rx="4" fill="#0F172A"/>
+    <text x="600" y="365" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#F1F5F9" font-weight="600">ESP32 WROOM</text>
+    <text x="600" y="378" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#94A3B8">38-pin Dev Board</text>
+
+    <!-- ESP32 pin labels (left) -->
+    <g font-family="monospace" font-size="10" fill="#F1F5F9">
+      <text x="520" y="410">3V3</text>
+      <text x="520" y="430">GND</text>
+      <text x="520" y="450">GPIO 0</text>
+      <text x="520" y="470">GPIO 18</text>
+      <text x="520" y="490">GPIO 19 (SCL)</text>
+      <text x="520" y="510">GPIO 23 (SDA)</text>
+      <text x="520" y="530">GPIO 25</text>
+      <text x="520" y="550">GPIO 26</text>
+      <text x="520" y="570">GPIO 32</text>
+      <text x="520" y="590">GPIO 33</text>
+    </g>
+    <g font-family="monospace" font-size="10" fill="#F1F5F9" text-anchor="end">
+      <text x="685" y="410">36 (VP)</text>
+      <text x="685" y="430">3V3</text>
+      <text x="685" y="450">GND</text>
+    </g>
+
+    <!-- Pin dots -->
+    <g fill="#FBBF24">
+      <circle cx="500" cy="406" r="3"/>
+      <circle cx="500" cy="426" r="3"/>
+      <circle cx="500" cy="446" r="3"/>
+      <circle cx="500" cy="466" r="3"/>
+      <circle cx="500" cy="486" r="3"/>
+      <circle cx="500" cy="506" r="3"/>
+      <circle cx="500" cy="526" r="3"/>
+      <circle cx="500" cy="546" r="3"/>
+      <circle cx="500" cy="566" r="3"/>
+      <circle cx="500" cy="586" r="3"/>
+      <circle cx="700" cy="406" r="3"/>
+      <circle cx="700" cy="426" r="3"/>
+      <circle cx="700" cy="446" r="3"/>
+    </g>
+  </g>
+
+  <!-- OLED (top left) -->
+  <g filter="url(#shadow)" transform="translate(80, 110)">
+    <rect width="240" height="120" rx="10" fill="#0EA5E9"/>
+    <rect x="12" y="12" width="216" height="96" rx="4" fill="#0F172A"/>
+    <text x="120" y="40" text-anchor="middle" font-family="monospace" font-size="14" fill="#22D3EE">VitalScope</text>
+    <line x1="20" y1="48" x2="220" y2="48" stroke="#22D3EE" stroke-width="0.5"/>
+    <text x="20" y="65" font-family="monospace" font-size="10" fill="#F1F5F9">HR: 72</text>
+    <text x="120" y="65" font-family="monospace" font-size="10" fill="#F1F5F9">SpO2: 98%</text>
+    <text x="20" y="80" font-family="monospace" font-size="10" fill="#94A3B8">Temp: 36.5C</text>
+    <text x="20" y="95" font-family="monospace" font-size="9" fill="#10B981">● LIVE</text>
+    <text x="120" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F172A" font-weight="600">SSD1306 OLED 0.96"</text>
+    <text x="120" y="152" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">VCC · GND · SCL · SDA</text>
+  </g>
+
+  <!-- MAX30102 (top right) -->
+  <g filter="url(#shadow)" transform="translate(880, 110)">
+    <rect width="240" height="120" rx="10" fill="#1E293B"/>
+    <rect x="80" y="35" width="80" height="50" rx="3" fill="#0F172A" stroke="#475569"/>
+    <circle cx="120" cy="60" r="14" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+    <circle cx="120" cy="60" r="6" fill="#EF4444" opacity="0.8"/>
+    <text x="120" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F172A" font-weight="600">MAX30102</text>
+    <text x="120" y="152" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">VIN · GND · SCL · SDA</text>
+    <text x="120" y="166" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#64748B" font-style="italic">HR + SpO₂ sensor</text>
+  </g>
+
+  <!-- DS18B20 (bottom left) -->
+  <g filter="url(#shadow)" transform="translate(80, 640)">
+    <rect width="240" height="120" rx="10" fill="#1E293B"/>
+    <ellipse cx="40" cy="60" rx="22" ry="10" fill="#94A3B8"/>
+    <rect x="62" y="55" width="100" height="10" fill="#0F172A"/>
+    <line x1="162" y1="55" x2="220" y2="50" stroke="#EF4444" stroke-width="2"/>
+    <line x1="162" y1="60" x2="220" y2="60" stroke="#FBBF24" stroke-width="2"/>
+    <line x1="162" y1="65" x2="220" y2="70" stroke="#0F172A" stroke-width="2"/>
+    <text x="120" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#F1F5F9" font-weight="600">DS18B20 Waterproof Probe</text>
+    <text x="120" y="138" text-anchor="middle" font-family="monospace" font-size="9" fill="#0F172A">RED · YELLOW · BLACK</text>
+    <text x="120" y="152" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#64748B" font-style="italic">Skin temperature</text>
+  </g>
+
+  <!-- AD8232 (bottom right) -->
+  <g filter="url(#shadow)" transform="translate(880, 640)">
+    <rect width="240" height="120" rx="10" fill="#B91C1C"/>
+    <path d="M 20 60 L 60 60 L 70 50 L 80 70 L 90 30 L 100 90 L 110 60 L 220 60"
+          fill="none" stroke="#FEF2F2" stroke-width="2"/>
+    <text x="120" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0F172A" font-weight="600">AD8232 ECG Module</text>
+    <text x="120" y="152" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">3.3V · GND · OUTPUT · LO+ · LO-</text>
+  </g>
+
+  <!-- Buttons (left side) -->
+  <g filter="url(#shadow)" transform="translate(80, 350)">
+    <rect width="240" height="180" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="120" y="30" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#0F172A" font-weight="600">3 Push Buttons</text>
+
+    <circle cx="60" cy="80" r="20" fill="#3B82F6"/>
+    <text x="60" y="84" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#fff">▲</text>
+    <text x="60" y="118" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">UP</text>
+    <text x="60" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#94A3B8">GPIO 32</text>
+
+    <circle cx="120" cy="80" r="20" fill="#10B981"/>
+    <text x="120" y="84" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#fff">●</text>
+    <text x="120" y="118" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">SELECT</text>
+    <text x="120" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#94A3B8">GPIO 25</text>
+
+    <circle cx="180" cy="80" r="20" fill="#3B82F6"/>
+    <text x="180" y="84" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#fff">▼</text>
+    <text x="180" y="118" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">DOWN</text>
+    <text x="180" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#94A3B8">GPIO 33</text>
+
+    <text x="120" y="160" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#64748B" font-style="italic">All shared GND</text>
+  </g>
+
+  <!-- Power rail indicator (right side) -->
+  <g filter="url(#shadow)" transform="translate(880, 350)">
+    <rect width="240" height="180" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="120" y="30" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#0F172A" font-weight="600">Power Rails</text>
+    <rect x="20" y="50" width="200" height="20" rx="4" fill="#EF4444"/>
+    <text x="120" y="64" text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" font-weight="bold">3.3V RAIL</text>
+    <rect x="20" y="80" width="200" height="20" rx="4" fill="#1E293B"/>
+    <text x="120" y="94" text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" font-weight="bold">GND RAIL</text>
+    <text x="120" y="125" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#64748B">All sensors + OLED share</text>
+    <text x="120" y="140" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#64748B">these two power lines</text>
+    <text x="120" y="165" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#94A3B8" font-style="italic">+4.7kΩ resistor for DS18B20</text>
+  </g>
+
+  <!-- Wires from ESP32 to components -->
+  <!-- OLED: I2C wires (green) -->
+  <path d="M 320 170 Q 410 170 410 340 L 500 486" fill="none" stroke="#10B981" stroke-width="2"/>
+  <path d="M 320 180 Q 420 180 420 360 L 500 506" fill="none" stroke="#10B981" stroke-width="2"/>
+  <text x="370" y="280" font-family="monospace" font-size="10" fill="#10B981" font-weight="bold">I2C SCL/SDA</text>
+
+  <!-- MAX30102: I2C wires (shared) -->
+  <path d="M 880 170 Q 790 170 790 340 L 700 486" fill="none" stroke="#10B981" stroke-width="2"/>
+  <path d="M 880 180 Q 780 180 780 360 L 700 506" fill="none" stroke="#10B981" stroke-width="2"/>
+  <text x="800" y="280" font-family="monospace" font-size="10" fill="#10B981" font-weight="bold">Same I2C bus</text>
+
+  <!-- DS18B20: data line -->
+  <path d="M 320 690 Q 410 690 410 600 L 500 546" fill="none" stroke="#F59E0B" stroke-width="2"/>
+  <text x="370" y="640" font-family="monospace" font-size="10" fill="#F59E0B" font-weight="bold">1-Wire data</text>
+  <text x="370" y="654" font-family="monospace" font-size="9" fill="#94A3B8">(+ 4.7kΩ pull-up)</text>
+
+  <!-- AD8232: analog -->
+  <path d="M 880 690 Q 790 690 790 600 L 700 406" fill="none" stroke="#EF4444" stroke-width="2"/>
+  <path d="M 880 700 Q 780 700 780 600 L 500 470" fill="none" stroke="#EF4444" stroke-width="2"/>
+  <path d="M 880 710 Q 770 710 770 600 L 500 450" fill="none" stroke="#EF4444" stroke-width="2"/>
+  <text x="800" y="640" font-family="monospace" font-size="10" fill="#EF4444" font-weight="bold">ECG signals</text>
+
+  <!-- Buttons to ESP32 -->
+  <path d="M 320 430 L 500 570" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M 320 430 L 500 590" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M 320 430 L 500 530" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  <text x="370" y="460" font-family="monospace" font-size="10" fill="#3B82F6" font-weight="bold">Buttons</text>
+
+  <!-- Legend at bottom -->
+  <g transform="translate(60, 760)" font-family="sans-serif" font-size="11">
+    <rect width="20" height="3" fill="#10B981"/>
+    <text x="28" y="6" fill="#475569">I2C Bus</text>
+    <rect x="100" width="20" height="3" fill="#F59E0B"/>
+    <text x="128" y="6" fill="#475569">1-Wire</text>
+    <rect x="200" width="20" height="3" fill="#EF4444"/>
+    <text x="228" y="6" fill="#475569">Analog/ECG</text>
+    <rect x="330" width="20" height="3" fill="#3B82F6"/>
+    <text x="358" y="6" fill="#475569">Digital Input</text>
+  </g>
+</svg>

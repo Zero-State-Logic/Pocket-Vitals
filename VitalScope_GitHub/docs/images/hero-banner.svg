@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-label="VitalScope hero banner">
+  <title>VitalScope — Portable Health Monitor</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="0.5" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="hr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EF4444"/>
+      <stop offset="1" stop-color="#F87171"/>
+    </linearGradient>
+    <linearGradient id="o2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="temp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="ecg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="380" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.06" stroke="#94A3B8" stroke-width="0.5">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="380"/>
+    <line x1="400" y1="0" x2="400" y2="380"/>
+    <line x1="600" y1="0" x2="600" y2="380"/>
+    <line x1="800" y1="0" x2="800" y2="380"/>
+    <line x1="1000" y1="0" x2="1000" y2="380"/>
+  </g>
+
+  <!-- ECG waveform background -->
+  <path d="M 0 200 L 100 200 L 110 200 L 120 190 L 130 200 L 145 200 L 160 130 L 170 270 L 180 200 L 250 200 L 260 200 L 265 195 L 280 200 L 320 200 L 380 200 L 390 200 L 400 190 L 410 200 L 425 200 L 440 130 L 450 270 L 460 200 L 530 200 L 540 200 L 545 195 L 560 200 L 620 200 L 680 200 L 690 200 L 700 190 L 710 200 L 725 200 L 740 130 L 750 270 L 760 200 L 830 200 L 840 200 L 845 195 L 860 200 L 920 200 L 980 200 L 990 200 L 1000 190 L 1010 200 L 1025 200 L 1040 130 L 1050 270 L 1060 200 L 1130 200 L 1140 200 L 1145 195 L 1160 200 L 1200 200"
+        fill="none" stroke="url(#ecg)" stroke-width="2" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Title block -->
+  <g transform="translate(60, 90)">
+    <text font-family="'SF Pro Display', -apple-system, sans-serif" font-size="78" font-weight="800" fill="#F1F5F9" letter-spacing="-2">VitalScope</text>
+    <text y="50" font-family="'SF Pro Text', sans-serif" font-size="22" font-weight="400" fill="#94A3B8" letter-spacing="0.5">Portable Multi-Sensor Health Monitor · ESP32 Edition</text>
+
+    <!-- Feature pills -->
+    <g transform="translate(0, 100)" font-family="'SF Pro Text', sans-serif" font-size="13" font-weight="600">
+      <g transform="translate(0,0)">
+        <rect width="120" height="30" rx="15" fill="url(#hr)"/>
+        <text x="60" y="20" text-anchor="middle" fill="#fff">♥ HEART RATE</text>
+      </g>
+      <g transform="translate(130, 0)">
+        <rect width="100" height="30" rx="15" fill="url(#o2)"/>
+        <text x="50" y="20" text-anchor="middle" fill="#fff">O₂ SpO2</text>
+      </g>
+      <g transform="translate(240, 0)">
+        <rect width="120" height="30" rx="15" fill="url(#temp)"/>
+        <text x="60" y="20" text-anchor="middle" fill="#fff">🌡 TEMPERATURE</text>
+      </g>
+      <g transform="translate(370, 0)">
+        <rect width="100" height="30" rx="15" fill="url(#ecg)"/>
+        <text x="50" y="20" text-anchor="middle" fill="#fff">📈 LIVE ECG</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Device illustration (right side) -->
+  <g transform="translate(820, 80)">
+    <!-- Device case -->
+    <rect x="0" y="0" width="280" height="220" rx="20" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+    <rect x="10" y="10" width="260" height="200" rx="14" fill="#0F172A" stroke="#334155"/>
+
+    <!-- OLED screen -->
+    <rect x="40" y="30" width="200" height="100" rx="4" fill="#000" stroke="#475569" stroke-width="1.5"/>
+    <text x="140" y="60" text-anchor="middle" font-family="monospace" font-size="14" fill="#22D3EE" font-weight="bold">VitalScope</text>
+    <line x1="50" y1="68" x2="230" y2="68" stroke="#22D3EE" stroke-width="0.5"/>
+    <text x="60" y="86" font-family="monospace" font-size="11" fill="#F1F5F9">HR:</text>
+    <text x="60" y="102" font-family="monospace" font-size="16" fill="#22D3EE" font-weight="bold">72 BPM</text>
+    <text x="155" y="86" font-family="monospace" font-size="11" fill="#F1F5F9">SpO2:</text>
+    <text x="155" y="102" font-family="monospace" font-size="16" fill="#22D3EE" font-weight="bold">98%</text>
+    <text x="60" y="122" font-family="monospace" font-size="9" fill="#64748B">Live monitoring active</text>
+
+    <!-- Buttons -->
+    <circle cx="50" cy="170" r="12" fill="#475569" stroke="#64748B" stroke-width="2"/>
+    <text x="50" y="174" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#F1F5F9">▲</text>
+    <circle cx="140" cy="170" r="12" fill="#475569" stroke="#64748B" stroke-width="2"/>
+    <text x="140" y="174" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#F1F5F9">●</text>
+    <circle cx="230" cy="170" r="12" fill="#475569" stroke="#64748B" stroke-width="2"/>
+    <text x="230" y="174" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#F1F5F9">▼</text>
+
+    <!-- Power LED -->
+    <circle cx="260" cy="20" r="3" fill="#10B981" filter="url(#glow)"/>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="60" y="340" font-family="'SF Pro Text', sans-serif" font-size="14" fill="#64748B" letter-spacing="2">OPEN SOURCE · MIT LICENSE · BUILT WITH ESP32 + C++</text>
+</svg>

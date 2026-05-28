@@ -1,0 +1,23 @@
+// ========================================================================
+//  EDIT THE s60sc/Adafruit_TouchScreen LIBRARY
+// ========================================================================
+//
+// In your Arduino libraries folder, find the s60sc touch library:
+//   Adafruit_TouchScreen-master/TouchScreen.h
+//
+// Near the top of that file, find this block:
+//
+//     // ESP32 specific
+//     //#define ESP32_WIFI_TOUCH
+//
+// REMOVE the // in front of #define ESP32_WIFI_TOUCH so it becomes:
+//
+//     // ESP32 specific
+//     #define ESP32_WIFI_TOUCH
+//
+// That's the only change needed to that file. Save and close.
+//
+// The library will then automatically use:
+//   aXM = GPIO 35 (SP)  — connected via mod wire to LCD_RS
+//   aYP = GPIO 39 (SN)  — connected via mod wire to LCD_WR
+// which matches your wiring.
