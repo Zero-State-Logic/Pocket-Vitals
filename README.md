@@ -1,6 +1,6 @@
 <div align="center">
 
-![VitalScope Banner](docs/images/hero-banner.svg)
+![VitalScope Banner](VitalScope_Github/docs/images/hero-banner.svg)
 
 # VitalScope
 
@@ -37,7 +37,7 @@ This project showcases a complete embedded engineering workflow: from sensor sel
 
 ## ✨ Features
 
-![Features](docs/images/features.svg)
+![Features](VitalScope_Github/docs/images/features.svg)
 
 | Feature | Implementation |
 |---|---|
@@ -56,7 +56,7 @@ This project showcases a complete embedded engineering workflow: from sensor sel
 
 The user interface is built around a clean, scrollable menu system with animated feedback for every action:
 
-![Screens](docs/images/screen-mockups.svg)
+![Screens](VitalScope_Github/docs/images/screen-mockups.svg)
 
 | # | Screen | Trigger | What it shows |
 |---|---|---|---|
@@ -102,7 +102,7 @@ The user interface is built around a clean, scrollable menu system with animated
 
 ## 🔌 Wiring
 
-![Wiring Diagram](docs/images/wiring-diagram.svg)
+![Wiring Diagram](VitalScope_Github/docs/images/wiring-diagram.svg)
 
 ### Complete Pin Map
 
@@ -131,7 +131,7 @@ The user interface is built around a clean, scrollable menu system with animated
 
 ## 🧠 System Architecture
 
-![Architecture](docs/images/architecture.svg)
+![Architecture](VitalScope_Github/docs/images/architecture.svg)
 
 The firmware follows a strict three-layer design:
 
