@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="VitalScope system architecture">
+  <title>System Architecture</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <filter id="card-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="#F8FAFC"/>
+
+  <text x="600" y="36" text-anchor="middle" font-family="'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#0F172A">System Architecture</text>
+  <text x="600" y="60" text-anchor="middle" font-family="'SF Pro Text', sans-serif" font-size="13" fill="#64748B">Data flow from sensors → ESP32 → user interface</text>
+
+  <!-- Layer 1: Sensors (left side, 3 boxes) -->
+  <g font-family="sans-serif">
+    <text x="180" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">SENSOR LAYER</text>
+
+    <g filter="url(#card-shadow)">
+      <rect x="60" y="130" width="240" height="80" rx="8" fill="#FEE2E2" stroke="#FCA5A5"/>
+      <text x="180" y="155" text-anchor="middle" font-size="14" font-weight="700" fill="#991B1B">MAX30102</text>
+      <text x="180" y="172" text-anchor="middle" font-size="11" fill="#7F1D1D">I²C @ 0x57</text>
+      <text x="180" y="190" text-anchor="middle" font-size="11" fill="#7F1D1D">Heart Rate + SpO₂</text>
+    </g>
+
+    <g filter="url(#card-shadow)">
+      <rect x="60" y="230" width="240" height="80" rx="8" fill="#FEF3C7" stroke="#FCD34D"/>
+      <text x="180" y="255" text-anchor="middle" font-size="14" font-weight="700" fill="#92400E">DS18B20</text>
+      <text x="180" y="272" text-anchor="middle" font-size="11" fill="#78350F">1-Wire (GPIO 26)</text>
+      <text x="180" y="290" text-anchor="middle" font-size="11" fill="#78350F">Skin Temperature</text>
+    </g>
+
+    <g filter="url(#card-shadow)">
+      <rect x="60" y="330" width="240" height="80" rx="8" fill="#DBEAFE" stroke="#93C5FD"/>
+      <text x="180" y="355" text-anchor="middle" font-size="14" font-weight="700" fill="#1E40AF">AD8232</text>
+      <text x="180" y="372" text-anchor="middle" font-size="11" fill="#1E3A8A">Analog (GPIO 36/18/0)</text>
+      <text x="180" y="390" text-anchor="middle" font-size="11" fill="#1E3A8A">ECG Waveform</text>
+    </g>
+  </g>
+
+  <!-- Layer 2: Microcontroller -->
+  <text x="600" y="110" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#0F172A">PROCESSING LAYER</text>
+
+  <g filter="url(#card-shadow)">
+    <rect x="450" y="130" width="300" height="280" rx="10" fill="#1E293B"/>
+    <rect x="465" y="145" width="270" height="40" rx="4" fill="#0F172A"/>
+    <text x="600" y="170" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#F1F5F9">ESP32 WROOM-32</text>
+
+    <text x="600" y="210" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#22D3EE">Firmware Modules</text>
+
+    <rect x="480" y="220" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="235" font-family="monospace" font-size="10" fill="#F1F5F9">Sensor Drivers</text>
+
+    <rect x="480" y="248" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="263" font-family="monospace" font-size="10" fill="#F1F5F9">Signal Processing</text>
+
+    <rect x="480" y="276" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="291" font-family="monospace" font-size="10" fill="#F1F5F9">State Machines per Screen</text>
+
+    <rect x="480" y="304" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="319" font-family="monospace" font-size="10" fill="#F1F5F9">Animation Engine</text>
+
+    <rect x="480" y="332" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="347" font-family="monospace" font-size="10" fill="#F1F5F9">UI Renderer</text>
+
+    <rect x="480" y="360" width="240" height="22" rx="3" fill="#334155"/>
+    <text x="490" y="375" font-family="monospace" font-size="10" fill="#F1F5F9">Button Input Manager</text>
+  </g>
+
+  <!-- Layer 3: User Interface (right side) -->
+  <text x="1020" y="110" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="700" fill="#0F172A">INTERFACE LAYER</text>
+
+  <g filter="url(#card-shadow)">
+    <rect x="900" y="130" width="240" height="80" rx="8" fill="#E0F2FE" stroke="#7DD3FC"/>
+    <text x="1020" y="155" text-anchor="middle" font-size="14" font-weight="700" fill="#075985">SSD1306 OLED</text>
+    <text x="1020" y="172" text-anchor="middle" font-size="11" fill="#0C4A6E">128×64 I²C @ 0x3C</text>
+    <text x="1020" y="190" text-anchor="middle" font-size="11" fill="#0C4A6E">Visual Output</text>
+  </g>
+
+  <g filter="url(#card-shadow)">
+    <rect x="900" y="230" width="240" height="80" rx="8" fill="#D1FAE5" stroke="#6EE7B7"/>
+    <text x="1020" y="255" text-anchor="middle" font-size="14" font-weight="700" fill="#065F46">3× Push Buttons</text>
+    <text x="1020" y="272" text-anchor="middle" font-size="11" fill="#064E3B">GPIO 32, 33, 25</text>
+    <text x="1020" y="290" text-anchor="middle" font-size="11" fill="#064E3B">User Input</text>
+  </g>
+
+  <g filter="url(#card-shadow)">
+    <rect x="900" y="330" width="240" height="80" rx="8" fill="#F3E8FF" stroke="#C4B5FD"/>
+    <text x="1020" y="355" text-anchor="middle" font-size="14" font-weight="700" fill="#5B21B6">Serial Monitor</text>
+    <text x="1020" y="372" text-anchor="middle" font-size="11" fill="#4C1D95">USB 115200 baud</text>
+    <text x="1020" y="390" text-anchor="middle" font-size="11" fill="#4C1D95">Debug + Calibration</text>
+  </g>
+
+  <!-- Arrows from sensors to ESP32 -->
+  <line x1="300" y1="170" x2="445" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="180" font-family="monospace" font-size="10" fill="#475569">I²C</text>
+
+  <line x1="300" y1="270" x2="445" y2="270" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="260" font-family="monospace" font-size="10" fill="#475569">1-Wire</text>
+
+  <line x1="300" y1="370" x2="445" y2="340" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="360" font-family="monospace" font-size="10" fill="#475569">Analog</text>
+
+  <!-- Arrows from ESP32 to outputs -->
+  <line x1="755" y1="200" x2="895" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="810" y="180" font-family="monospace" font-size="10" fill="#475569">I²C</text>
+
+  <line x1="755" y1="270" x2="895" y2="270" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="810" y="260" font-family="monospace" font-size="10" fill="#475569">Digital</text>
+
+  <line x1="755" y1="340" x2="895" y2="370" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="810" y="360" font-family="monospace" font-size="10" fill="#475569">UART</text>
+
+  <!-- Code architecture footer -->
+  <g transform="translate(60, 460)">
+    <rect width="1080" height="110" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="20" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#0F172A">Code Organization Principles</text>
+
+    <g font-family="sans-serif" font-size="11" fill="#475569">
+      <text x="20" y="50">• <tspan font-weight="600" fill="#0F172A">Non-blocking loop</tspan> — animations run at ~30 FPS using millis(), never delay()</text>
+      <text x="20" y="68">• <tspan font-weight="600" fill="#0F172A">State machines per screen</tspan> — clean separation: WAITING → MEASURING → DONE</text>
+      <text x="20" y="86">• <tspan font-weight="600" fill="#0F172A">Auto-detection</tspan> — sensors detect their own use; no manual "start" required</text>
+      <text x="540" y="50">• <tspan font-weight="600" fill="#0F172A">Shared I²C bus</tspan> — MAX30102 + OLED on the same 2 wires (GPIO 19/23)</text>
+      <text x="540" y="68">• <tspan font-weight="600" fill="#0F172A">Hardware debouncing</tspan> — 30ms button debounce for clean input</text>
+      <text x="540" y="86">• <tspan font-weight="600" fill="#0F172A">Smoothing filters</tspan> — running average on temperature, R-peak detection on ECG</text>
+    </g>
+  </g>
+</svg>
